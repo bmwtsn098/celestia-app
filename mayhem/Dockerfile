@@ -6,5 +6,5 @@ RUN go mod tidy
 RUN go build ./cmd/celestia-appd
 
 # Package Stage
-# FROM debian:bookworm-slim
-# COPY --from=builder /celestia-app/celestia-appd /
+FROM debian:bookworm-slim
+COPY --from=builder /celestia-app/celestia-appd /
